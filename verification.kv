@@ -1,0 +1,37 @@
+<VerificationPage>:
+MDScreen:
+    name:'verification'
+    id: verify_code
+    BoxLayout:
+        
+        size_hint: None, None
+        size: 300, 450
+        pos_hint: {"center_x": 0.5, "center_y": 0.7}
+        elevation: 10
+        padding: 60
+        spacing: 35
+        orientation: 'vertical'
+
+        MDTextFieldRound:
+            hint_text: "Verification Code"
+            id: user_verification_code
+            helper_text: "Required"
+            helper_text_mode: "on_error"
+            required: True
+            icon_right: "key-variant"
+            foreground_color: 1, 0, 1, 1
+            size_hint_x: None
+            width: 220
+            font_size: 20            
+            pos_hint: {"center_x": 0.5}
+            password: True
+            multiline: False
+
+        MDFillRoundFlatButton:
+            text: "Sumbit"
+            font_size: 15
+            pos_hint: {"center_x": 0.5}
+            on_press: 
+                app.verify_code()
+                # app.root.current = 'home_page'
+                # root.manager.transition.direction = "up"

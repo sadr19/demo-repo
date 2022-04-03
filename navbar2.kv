@@ -1,0 +1,183 @@
+MDScreen:
+    name:'home_page'
+    id: home_page
+    MDNavigationLayout:
+        ScreenManager:
+            id: sm
+            Screen:
+                id: home
+                name: 'home'
+                BoxLayout:
+                    orientation: 'vertical'
+                    MDToolbar:
+                        title: "Menu"
+                        elevation: 5
+                        left_action_items: [['menu', lambda x: nav_drawer.set_state('toggle')]]
+                
+
+            Screen:
+                id: profile_screen
+                name: 'profile_screen'
+                BoxLayout:
+                    orientation: 'vertical'
+                    MDToolbar:
+                        title: "Menu"
+                        elevation: 5
+                        left_action_items: [['menu', lambda x: nav_drawer.set_state('toggle')]]
+                    Screen:
+                        BoxLayout:
+                            orientation: 'vertical'
+                            spacing: '0dp'
+                            padding: '-100dp'
+                            MDLabel:
+                                text: 'Your Profile'
+                                font_size: 30
+                                halign: 'center'
+                                size_hint_y: None
+                                height: self.texture_size[1]
+                                padding_y: 15
+
+                            MDTextFieldRound:
+                                id: edit_user
+                                icon_right: "account"
+                                size_hint_x: None
+                                width: 200
+                                font_size: 14
+                                pos_hint: {'center_x': .5}
+                                multiline: False
+                                text:''
+                            
+                            
+                            MDTextFieldRound:
+                                id: profile_password
+                                icon_right: "eye-off"
+                                size_hint_x: None
+                                password: 'True'
+                                width: 200
+                                font_size: 14
+                                pos_hint: {'center_x': .5}
+                                multiline: False
+                                text: ''
+                            
+                            MDTextFieldRound:
+                                id: conf_password
+                                icon_right: "eye-off"
+                                size_hint_x: None
+                                password: 'True'
+                                width: 200
+                                font_size: 14
+                                pos_hint: {'center_x': .5}
+                                multiline: False
+                                text: ''
+                            
+                            MDTextFieldRound:
+                                hint_text:'I am good at'
+                                id: good_c1
+                                required: True
+                                foreground_color: 1, 0, 1, 1
+                                size_hint_x: None
+                                width: 150
+                                font_size: 15
+                                pos_hint: {"center_x": 0.5}
+                                multiline: False
+                            
+                            MDTextFieldRound:
+                                hint_text:'I am good at'
+                                id: good_c2
+                                required: True
+                                foreground_color: 1, 0, 1, 1
+                                size_hint_x: None
+                                width: 150
+                                font_size: 15
+                                pos_hint: {"center_x": 0.5}
+                                multiline: False
+                            
+                            MDTextFieldRound:
+                                hint_text:'I am good at'
+                                id: good_c3
+                                required: True
+                                foreground_color: 1, 0, 1, 1
+                                size_hint_x: None
+                                width: 150
+                                font_size: 15
+                                pos_hint: {"center_x": 0.5}
+                                multiline: False
+                            
+
+                            MDTextFieldRound:
+                                hint_text:'I need help with '
+                                id: bad_b1
+                                required: True
+                                foreground_color: 1, 0, 1, 1
+                                size_hint_x: None
+                                width: 150
+                                font_size: 15
+                                pos_hint: {"center_x": 0.5}
+                                multiline: False
+                            
+                            MDTextFieldRound:
+                                hint_text:'I need help with '
+                                id: bad_b2
+                                required: True
+                                foreground_color: 1, 0, 1, 1
+                                size_hint_x: None
+                                width: 150
+                                font_size: 15
+                                pos_hint: {"center_x": 0.5}
+                                multiline: False
+                            
+                            MDRectangleFlatIconButton:
+                                icon: "account-reactivate"
+                                text: 'Save'
+                                theme_text_color: "Custom"
+                                pos_hint: {'center_x': .5}
+                                on_release:
+                                    app.update_profile()
+
+                    Widget:
+
+            
+
+
+
+
+        MDNavigationDrawer:
+            id: nav_drawer
+            BoxLayout:
+                orientation: 'vertical'
+                spacing: '10dp'
+                padding: '10dp'
+                MDLabel:
+                    id: profile_name
+                    text: ''
+                    font_style: 'Caption'
+                    size_hint_y: None
+                    height: self.texture_size[1]
+                
+                ScrollView:
+                    MDList:
+                        OneLineIconListItem:
+                            text: 'Profile'
+                            on_release:
+                                sm.current = 'profile_screen'
+                            IconLeftWidget:
+                                icon: 'account'
+
+                        
+
+                        OneLineIconListItem:
+                            text: 'Home'
+                            on_release:
+                                sm.current = 'home'
+                            IconLeftWidget:
+                                icon: 'home'
+
+                        
+
+                       
+
+                            IconLeftWidget:
+                                icon: 'format-list-bulleted'
+
+
+

@@ -1,0 +1,101 @@
+MDScreen:
+    name: 'profile'
+    id: profile
+    BoxLayout:
+        MDTextFieldRound:
+            hint_text:'Password'
+            id: updated_password
+            required: True
+            icon_right: "key-variant"
+            foreground_color: 1, 0, 1, 1
+            size_hint_x: None
+            width: 150
+            font_size: 15
+            pos_hint: {"center_x": 0.5}
+            password: True
+            multiline: False
+
+        MDTextFieldRound:
+            hint_text:'Confirm Password'
+            id: updated_conf_password
+            required: True
+            icon_right: "key-variant"
+            foreground_color: 1, 0, 1, 1
+            size_hint_x: None
+            width: 150
+            font_size: 15
+            pos_hint: {"center_x": 0.5}
+            password: True
+            multiline: False
+
+        MDFillRoundFlatButton:
+            text: "Change Password"
+            font_size: 15
+            pos_hint: {"center_x": 0.5}
+            on_press: 
+                app.update_password()
+                app.root.current = 'navbar'
+                root.manager.transition.direction = 'right'
+
+
+
+    BoxLayout:
+        orientation: 'vertical'
+        MDToolbar:
+            title: "Profile Page"
+            md_bg_color: .2,.2,.2,1
+            specific_text_color: 1,1,1,1
+        
+        MDFillRoundFlatButton:
+            text: "Change Password"
+            font_size: 15
+            pos_hint: {"center_x": 0.5}
+            on_press: 
+                app.update_password()
+                app.root.current = 'navbar'
+                root.manager.transition.direction = 'right'
+        
+        
+
+
+        MDBottomNavigation:
+            #color stuff
+            #panel_color: 0,0,1,1
+
+            MDBottomNavigationItem:
+                name: 'screen 1'
+                text: "Match"
+                icon: 'home'
+
+                MDLabel:
+                    text: "Student List"
+                    halign: 'center'
+
+            MDBottomNavigationItem:
+                name: 'screen 2'
+                text: "Post Page"
+                icon: 'dropbox'
+
+                MDLabel:
+                    text: "Post Page"
+                    halign: 'center'
+
+
+            MDBottomNavigationItem:
+                name: 'screen 3'
+                text: "Message"
+                icon: 'inbox'
+
+                MDLabel:
+                    text: "Message Box"
+                    halign: 'center'
+            
+            MDBottomNavigationItem:
+                name: 'screen 3'
+                text: "Profile"
+                icon: 'account-circle'
+
+                MDLabel:
+                    text: "Profile Page"
+                    halign: 'center'
+

@@ -1,0 +1,63 @@
+MDScreen:
+name: 'navbar'
+id: navbar
+
+
+MDNavigationLayout:
+    md_bg_color: 1, 1, 1, 1
+
+ScreenManager: 
+    id: sm 
+    transition: NoTransition()
+
+    Screen: 
+        id: home
+        name: 'home'
+        BoxLayout:
+            orientation: 'vertical'
+            MDToolbar:
+                title: "Welcome to home page"
+                md_bg_color: .2,.2,.2,1
+                specific_text_color: 1,1,1,1
+
+            MDBottomNavigation:
+                #color stuff
+                #panel_color: 0,0,1,1
+
+                MDBottomNavigationItem:
+                name: 'screen 1'
+                text: "Match"
+                icon: 'home'
+
+                MDLabel:
+                    text: "Student List"
+                    halign: 'center'
+
+            MDBottomNavigationItem:
+                name: 'screen 2'
+                text: "Post Page"
+                icon: 'dropbox'
+
+                MDLabel:
+                    text: "Post Page"
+                    halign: 'center'
+
+
+            MDBottomNavigationItem:
+                name: 'screen 3'
+                text: "Message"
+                icon: 'inbox'
+
+                MDLabel:
+                    text: "Message Box"
+                    halign: 'center'
+            
+            MDBottomNavigationItem:
+                text: "Profile"
+                icon: 'account-circle'
+                on_release:
+                        sm.current = 'profile_screen'
+
+                MDLabel:
+                    text: "Profile Page"
+                    halign: 'center'

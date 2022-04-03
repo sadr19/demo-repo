@@ -1,0 +1,132 @@
+<LoginPage>:
+MDScreen:
+    name:'login'
+    id: login
+    BoxLayout:
+        
+        size_hint: None, None
+        size: 300, 450
+        pos_hint: {"center_x": 0.5, "center_y": 0.5}
+        elevation: 10
+        padding: 60
+        spacing: 35
+        orientation: 'vertical'
+        
+
+        MDTextFieldRound:
+            hint_text: "Email"
+            id: user_email
+            required: True
+            helper_text: "Required"
+            helper_text_mode: "on_error"
+            icon_right: "account-check"
+            foreground_color: 1, 0, 1, 1
+            size_hint_x: None
+            width: 220
+            font_size: 20
+            pos_hint: {"center_x": 0.5}
+            multiline: False
+
+        MDTextFieldRound:
+            hint_text: "Password"
+            id: user_password
+            helper_text: "Required"
+            helper_text_mode: "on_error"
+            required: True
+            icon_right: "key-variant"
+            foreground_color: 1, 0, 1, 1
+            size_hint_x: None
+            width: 220
+            font_size: 20            
+            pos_hint: {"center_x": 0.5}
+            password: True
+            multiline: False
+
+        
+        MDFillRoundFlatButton:
+            text: "SIGN UP"
+            font_size: 10
+            pos_hint: {"center_x": 0.5}
+            on_press: 
+                app.root.current = 'create_an_account'
+                root.manager.transition.direction = "left"
+        
+    
+        
+        MDFillRoundFlatButton:
+            text: "LOG IN"
+            font_size: 15
+            pos_hint: {"center_x": 0.5}
+            on_press: 
+                app.login_valid()
+                # app.root.current = 'home_page'
+                # root.manager.transition.direction = "up"
+
+        
+       
+  
+
+
+# <LoginPage>:
+# MDScreen:
+#     name:'login'
+#     id: login
+#     BoxLayout:
+        
+#         size_hint: None, None
+#         size: 300, 450
+#         pos_hint: {"center_x": 0.5, "center_y": 0.5}
+#         elevation: 10
+#         padding: 60
+#         spacing: 35
+#         orientation: 'vertical'
+        
+
+#         MDTextFieldRound:
+#             hint_text: "Email"
+#             id: user_email
+#             required: True
+#             helper_text: "Required"
+#             helper_text_mode: "on_error"
+#             icon_right: "account-check"
+#             foreground_color: 1, 0, 1, 1
+#             size_hint_x: None
+#             width: 220
+#             font_size: 20
+#             pos_hint: {"center_x": 0.5}
+#             multiline: False
+
+#         MDTextFieldRound:
+#             hint_text: "Password"
+#             id: user_password
+#             helper_text: "Required"
+#             helper_text_mode: "on_error"
+#             required: True
+#             icon_right: "key-variant"
+#             foreground_color: 1, 0, 1, 1
+#             size_hint_x: None
+#             width: 220
+#             font_size: 20            
+#             pos_hint: {"center_x": 0.5}
+#             password: True
+#             multiline: False
+
+        
+#         MDFillRoundFlatButton:
+#             text: "SIGN UP"
+#             font_size: 10
+#             pos_hint: {"center_x": 0.5}
+#             on_press: 
+#                 app.root.current = 'create_an_account'
+#                 root.manager.transition.direction = "left"
+        
+    
+        
+#         MDFillRoundFlatButton:
+#             text: "LOG IN"
+#             font_size: 15
+#             pos_hint: {"center_x": 0.5}
+#             on_press: 
+#                 app.login_valid()
+#                 app.root.current = 'home_page'
+#                 root.manager.transition.direction = "up"

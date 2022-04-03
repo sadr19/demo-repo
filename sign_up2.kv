@@ -1,0 +1,133 @@
+MDScreen:
+    name: 'create_an_account'
+    id: create_an_account
+    
+    BoxLayout:
+        
+        
+        size: 500, 450
+        pos_hint: {"center_x": 0.5, "center_y": 0.5}
+        elevation: 10
+        padding: 15
+        spacing: 20
+        orientation: 'vertical'
+
+        MDTextFieldRound:
+            hint_text: "UserName"
+            id: new_user
+            required: True
+            icon_right: "account-check"
+            foreground_color: 1, 0, 1, 1
+            size_hint_x: None
+            width: 150
+            font_size: 15
+            pos_hint: {"center_x": 0.5}
+            multiline: False
+
+        
+        MDTextFieldRound:
+            hint_text:'Email'
+            id: new_email
+            icon_right: "account"
+            required: True
+            foreground_color: 1, 0, 1, 1
+            size_hint_x: None
+            width: 150
+            font_size: 15
+            pos_hint: {"center_x": 0.5}
+            multiline: False
+
+        MDTextFieldRound:
+            hint_text:'Password'
+            id: new_password
+            required: True
+            icon_right: "key-variant"
+            foreground_color: 1, 0, 1, 1
+            size_hint_x: None
+            width: 150
+            font_size: 15
+            pos_hint: {"center_x": 0.5}
+            password: True
+            multiline: False
+        
+        MDTextFieldRound:
+            hint_text:'Confirm Password'
+            id: new_conf_password
+            required: True
+            icon_right: "key-variant"
+            foreground_color: 1, 0, 1, 1
+            size_hint_x: None
+            width: 150
+            font_size: 15
+            pos_hint: {"center_x": 0.5}
+            password: True
+            multiline: False
+
+        MDTextFieldRound:
+            hint_text:'I am good at'
+            id: good_c1
+            required: True
+            foreground_color: 1, 0, 1, 1
+            size_hint_x: None
+            width: 150
+            font_size: 15
+            pos_hint: {"center_x": 0.5}
+            multiline: False
+
+        MDTextFieldRound:
+            hint_text:'I am good at'
+            id: good_c2
+            required: True
+            foreground_color: 1, 0, 1, 1
+            size_hint_x: None
+            width: 150
+            font_size: 15
+            pos_hint: {"center_x": 0.5}
+            multiline: False
+
+        MDTextFieldRound:
+            hint_text:'I am good at'
+            id: good_c3
+            required: True
+            foreground_color: 1, 0, 1, 1
+            size_hint_x: None
+            width: 150
+            font_size: 15
+            pos_hint: {"center_x": 0.5}
+            multiline: False
+        
+
+        MDTextFieldRound:
+            hint_text:'I need help with '
+            id: bad_b1
+            required: True
+            foreground_color: 1, 0, 1, 1
+            size_hint_x: None
+            width: 150
+            font_size: 15
+            pos_hint: {"center_x": 0.5}
+            multiline: False
+        
+        MDTextFieldRound:
+            hint_text:'I need help with '
+            id: bad_b2
+            required: True
+            foreground_color: 1, 0, 1, 1
+            size_hint_x: None
+            width: 150
+            font_size: 15
+            pos_hint: {"center_x": 0.5}
+            multiline: False
+
+        MDFillRoundFlatButton:
+            text: "Submit"
+            font_size: 15
+            pos_hint: {"center_x": 0.5}
+            on_press: 
+                app.created_account()
+                # app.root.current = 'home_page'
+                root.manager.transition.direction = 'right'
+       
+
+
+
